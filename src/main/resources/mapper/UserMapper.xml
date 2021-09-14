@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.zhou.biz.mapper.UserMapper">
+    <insert id="addOneUser" parameterType="com.zhou.biz.entity.User" >
+        insert into user(no, name,  age) values(#{no}, #{name}, #{age})
+    </insert>
+    <select id="findAllUsers" resultType="com.zhou.biz.entity.User" >
+        select * from user
+    </select>
+    <update id="updateUser" parameterType="com.zhou.biz.entity.User">
+        update user set name=#{name},age=#{age} where no=#{no}
+    </update>
+    <select id="getOneUserDetail" parameterType="String" resultType="com.zhou.biz.entity.User" >
+        select * from user where name=#{name}
+    </select>
+</mapper>

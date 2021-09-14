@@ -1,0 +1,1 @@
+thrift --gen java:generated_annotations=undated -out ./src/main/java testThrift.thrift
